@@ -18,7 +18,10 @@ See the [Tutorial](https://decompfrontier.github.io/pages/Tutorial/index.html) p
 
 ### Docker
 For a quick Linux build you can use the provided `Dockerfile`. It compiles the
-server on a Debian base image and runs the standalone frontend.
+server on a Debian base image and runs the standalone frontend. The image
+includes the extra tools (`zip`, `unzip`, and `tar`) required by the vcpkg build
+system.
+
 
 ```bash
 docker build -t gimuserv .
