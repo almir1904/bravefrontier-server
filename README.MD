@@ -29,6 +29,17 @@ docker run -p 9960:9960 gimuserv
 
 The server will start using the configuration files from the `deploy` directory.
 
+### Docker Compose
+If you prefer using Docker Compose, a sample `docker-compose.yml` is provided.
+It mounts the `deploy` folder so configuration and the SQLite database persist
+between runs.
+
+```bash
+docker compose up --build
+```
+
+By default the game server is available on port `9960`.
+
 ## Legal
 The code of this project is released under the Affero GNU Public License v3.0+.
 
