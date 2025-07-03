@@ -1,6 +1,7 @@
 FROM debian:12-slim
 
 # Install basic build dependencies
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     git build-essential ninja-build cmake curl ca-certificates pkg-config \
     zip unzip tar \
