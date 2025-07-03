@@ -12,12 +12,14 @@ RUN git clone https://github.com/microsoft/vcpkg /opt/vcpkg \
 
 ENV VCPKG_ROOT=/opt/vcpkg
 ENV PATH="$PATH:/opt/vcpkg"
+ENV VCPKG_FEATURE_FLAGS=manifests
+ENV VCPKG_DEFAULT_TRIPLET=x64-linux
 
 WORKDIR /usr/src/app
 COPY . .
 
 # Install dependencies and build the project
-RUN vcpkg install --triplet x64-linux \
+RUN vcpkg install --triplet x64-linux --clean-after-build \
     && cmake -B build -G Ninja \
        -DCMAKE_TOOLCHAIN_FILE=/opt/vcpkg/scripts/buildsystems/vcpkg.cmake \
        -DCMAKE_BUILD_TYPE=Release \

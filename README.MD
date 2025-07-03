@@ -32,7 +32,8 @@ The server will start using the configuration files from the `deploy` directory.
 ### Docker Compose
 If you prefer using Docker Compose, a sample `docker-compose.yml` is provided.
 It mounts the `deploy` folder so configuration and the SQLite database persist
-between runs.
+between runs. The file uses the Compose V2 format, so the top-level `version`
+field is omitted.
 
 ```bash
 docker compose up --build
