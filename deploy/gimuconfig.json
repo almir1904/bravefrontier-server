@@ -8,7 +8,8 @@
   "server": {
     "wallpaper_banner": "/wallpaper/title_logo20151028.jpg",
     "game_version": 21900,
-    "notice_url": "http://ios21900.bfww.gumi.sg/pages/versioninfo"
+    "notice_url": "http://ios21900.bfww.gumi.sg/pages/versioninfo",
+    "public_hostname": "127.0.0.1:9960"
   },
 	"log":
 	{
