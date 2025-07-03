@@ -1,0 +1,8 @@
+services:
+  gimuserv:
+    build: .
+    container_name: gimuserv
+    ports:
+      - "9960:9960"
+    volumes:
+      - ./deploy:/usr/src/app/deploy

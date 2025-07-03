@@ -190,7 +190,7 @@ void Handler::UserInfoHandler::Handle(UserInfo& user, DrogonCallback cb, const J
         [this, &user, cb](const drogon::orm::Result& result) {
         if (result.size() > 0) {
             int col = 0;
-            auto& sql = result[0];
+            auto sql = result[0];
             user.teamInfo.UserID = user.info.userID;
             user.teamInfo.Level = sql[col++].as<uint32_t>();
             user.teamInfo.Exp = sql[col++].as<int64_t>();

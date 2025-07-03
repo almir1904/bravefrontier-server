@@ -16,6 +16,31 @@ For more information about the strategy of the offline mod/purpose of this serve
 ## Building
 See the [Tutorial](https://decompfrontier.github.io/pages/Tutorial/index.html) pages section "Development setup" for more information.
 
+### Docker
+For a quick Linux build you can use the provided `Dockerfile`. It compiles the
+server on a Debian base image and runs the standalone frontend. The image
+includes the extra tools (`zip`, `unzip`, and `tar`) required by the vcpkg build
+system.
+
+```bash
+docker build -t gimuserv .
+docker run -p 9960:9960 gimuserv
+```
+
+The server will start using the configuration files from the `deploy` directory.
+
+### Docker Compose
+If you prefer using Docker Compose, a sample `docker-compose.yml` is provided.
+It mounts the `deploy` folder so configuration and the SQLite database persist
+between runs. The file uses the Compose V2 format, so the top-level `version`
+field is omitted.
+
+```bash
+docker compose up --build
+```
+
+By default the game server is available on port `9960`.
+
 ## Legal
 The code of this project is released under the Affero GNU Public License v3.0+.
 
