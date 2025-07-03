@@ -32,7 +32,10 @@ void Utils::DumpInfoToDrogon(const drogon::HttpRequestPtr& rq, const std::string
 
 std::string Utils::GetDrogonBindHostname()
 {
-	return app().getListeners()[0].toIpPort();
+        const auto& publicHost = System::Instance().ServerConfig().PublicHostname;
+        if (!publicHost.empty())
+                return publicHost;
+        return app().getListeners()[0].toIpPort();
 }
 
 std::string Utils::GetDrogonHttpBindHostname()
