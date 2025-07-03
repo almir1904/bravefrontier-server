@@ -22,7 +22,6 @@ server on a Debian base image and runs the standalone frontend. The image
 includes the extra tools (`zip`, `unzip`, and `tar`) required by the vcpkg build
 system.
 
-
 ```bash
 docker build -t gimuserv .
 docker run -p 9960:9960 gimuserv
